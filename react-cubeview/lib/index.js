@@ -1,10 +1,20 @@
 'use strict';
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+    };
+}();
 
 var _react = require('react');
 
@@ -14,15 +24,39 @@ var _three = require('three');
 
 var THREE = _interopRequireWildcard(_three);
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) {
+        return obj;
+    } else {
+        var newObj = {};if (obj != null) {
+            for (var key in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+            }
+        }newObj.default = obj;return newObj;
+    }
+}
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) {
+    if (!self) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+}
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+    }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
 
 //import sizeMe from 'react-sizeme';
 
@@ -99,7 +133,6 @@ var CubeView = function (_Component) {
             
         }
     */
-
 
     _createClass(CubeView, [{
         key: 'setAngles',
@@ -333,6 +366,7 @@ var CubeView = function (_Component) {
             scene = null;
             this.camera = null;
             window.removeEventListener('resize', this.updateDimensions);
+            window.cancelAnimationFrame(animation);
             //canvas.removeEventListener('mousemove', this.onMouseMove);
             //canvas.removeEventListener('mouseup', this.handleClick);
             //this.controls.dispose();
@@ -880,22 +914,13 @@ var CubeView = function (_Component) {
             var width = this.props.width ? this.props.width : 100;
             var height = this.props.height ? this.props.height : 100;
 
-            return _react2.default.createElement(
-                'div',
-                { className: 'cube-view-container' },
-                _react2.default.createElement('img', { src: this.state.icon_home,
-                    className: 'button-home',
-                    onMouseOver: this.hoverHomeOn,
-                    onMouseOut: this.hoverHomeOff,
-                    onClick: this.clickHome
+            return _react2.default.createElement('div', { className: 'cube-view-container' }, _react2.default.createElement('img', { src: this.state.icon_home,
+                className: 'button-home',
+                onMouseOver: this.hoverHomeOn,
+                onMouseOut: this.hoverHomeOff,
+                onClick: this.clickHome
 
-                }),
-                _react2.default.createElement(
-                    'canvas',
-                    { ref: 'threeCanvas' },
-                    ' '
-                )
-            );
+            }), _react2.default.createElement('canvas', { ref: 'threeCanvas' }, ' '));
         }
     }]);
 

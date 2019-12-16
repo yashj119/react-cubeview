@@ -48,7 +48,7 @@
     },
     "scripts": {
         "start": "npm run storybook",
-        "build": "rimraf lib && BABEL_ENV=production babel src --out-dir lib --ignore test.js --copy-files",
+        "build": "rimraf lib && cross-env BABEL_ENV=production babel src --out-dir lib --ignore test.js --copy-files",
         "test": "jest",
         "test:watch": "jest --watch",
         "storybook": "start-storybook -p 6006",
@@ -67,6 +67,7 @@
         ]
     },
     "dependencies": {
+        "cross-env": "^6.0.3",
         "three": "^0.88.0",
         "three-react-obj-loader": "^1.0.4"
     }
