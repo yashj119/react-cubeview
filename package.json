@@ -68,7 +68,7 @@
     },
     "dependencies": {
         "cross-env": "^6.0.3",
-        "three": "^0.88.0",
-        "three-react-obj-loader": "^1.0.4"
+        "three": "^0.116.1",
+        "three-react-obj-loader": "^yashj119/three-react-object-loader"
     }
 }
